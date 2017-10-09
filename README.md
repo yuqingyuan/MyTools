@@ -13,3 +13,6 @@
 #忽视的文件夹名
 @folderIgnored = ("Pods","Assets.xcassets","Base.lproj");  #可添加或删除
 ```
+
+<h4>使用方法</h4>
+终端输入 perl CountLines.pl 加上文件路径就行
