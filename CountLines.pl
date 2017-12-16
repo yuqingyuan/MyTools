@@ -4,7 +4,7 @@ $dir = $file_need_check;
 #存放文件夹路径
 @folders;
 #统计代码行数的文件后缀
-@fileSuffix = ("swift","h","m");
+@fileSuffix = ("swift","h","m","py");
 #忽视的文件夹名
 @folderIgnored = ("Pods","Assets.xcassets","Base.lproj");
 
@@ -58,10 +58,11 @@ sub countLines{
     foreach(@fileNeedCheck){
         open(DATA,"<$_");
         while(<DATA>){
-            $linesInAll += 1;
+            if($_ ne "\n") {
+                $linesInAll += 1;
+            }
         }
     }
     print "代码总行数:".$linesInAll."\n";
 }
-
 exploreFolder($dir);
